@@ -9,16 +9,9 @@ remove:
 		--force
 
 connect:
-	make disconnect
 	make otp
 	sudo openvpn \
-		--config krakow-UDP4-7793-dmitry.romashov-config.ovpn \
-		--verb 3
-
-disconnect:
-	openvpn3 session-manage \
-		--disconnect \
-		--config pl-akvelon || true
+		--config krakow-UDP4-7793-dmitry.romashov-config.ovpn
 
 list:
 	openvpn3 configs-list --verbose
